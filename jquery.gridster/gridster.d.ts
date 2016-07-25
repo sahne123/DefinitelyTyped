@@ -203,19 +203,21 @@ interface Gridster {
 	* @param size_y The number of columns the widget occupies vertically.  Defaults to 1.
 	* @param col The column the widget should start in.
 	* @param row The row the widget should start in.
+	* @param {Array} [max_size] max_size Maximun size (in units) for width and height.
+    	* @param {Array} [min_size] min_size Minimum size (in units) for width and height.
 	* @return Returns the jQuery wrapped HTMLElement representing the widget that was just created.
 	**/
-	add_widget(html: string, size_x?: number, size_y?: number, col?: number, row?: number): JQuery;
+	add_widget(html: string, size_x?: number, size_y?: number, col?: number, row?: number, max_size?: number[], min_size?: number[]): JQuery;
 
 	/**
 	* @see add_widget
 	**/
-	add_widget(html: HTMLElement, size_x?: number, size_y?: number, col?: number, row?: number): JQuery;
+	add_widget(html: HTMLElement, size_x?: number, size_y?: number, col?: number, row?: number, max_size?: number[], min_size?: number[]): JQuery;
 
 	/**
 	* @see add_widget
 	**/
-	add_widget(html: JQuery, size_x?: number, size_y?: number, col?: number, row?: number): JQuery;
+	add_widget(html: JQuery, size_x?: number, size_y?: number, col?: number, row?: number, max_size?: number[], min_size?: number[]): JQuery;
 
     /**
      * Get the highest occupied cell.
