@@ -86,6 +86,11 @@ interface GridsterCoords {
 interface GridsterOptions {
 
 	/**
+	* A string to differentiate one gridster from another
+	**/
+	namespace?: string;
+	
+	/**
 	* Define who will be the draggable widgets.  Can be a CSS Selector String or a collection of HTMLElements.
 	* Type => string css selector
 	* Type => HTMLElement[]
@@ -139,8 +144,14 @@ interface GridsterOptions {
 	* The maximum number of columns that a widget can span.
 	* Default = 6
 	**/
-	max_size_x?: number;
+	max_size_x?: number|boolean;
 
+	/**
+	* If true, the number of columns increases automatically in need 
+	* Default = false
+	**/
+	autogrow_cols?: boolean;
+	
 	/**
 	* If true, all the CSS required to  osition  	l widgets in their respective col umns and rows will be generated automatically and injectedt the<head> of thed cument.You can set this to false, and write your own CSS targeting rows and cols via data - attributes like so: [data - col = "1"] { left: 10px; }
 	* Default = true
@@ -152,6 +163,8 @@ interface GridsterOptions {
 	* Default = true
 	**/
 	avoid_overlapped_widgets?: boolean;
+	
+	auto_init?: boolean;
 
 	/**
 	* Return the data you want for each widget in the serialization.
@@ -168,22 +181,6 @@ interface GridsterOptions {
 	**/
 	draggable?: GridsterDraggable;
 
-	/**
-	* A string to differentiate one gridster from another
-	**/
-	namespace?: string;
-	
-	/**
-	* If true, the number of columns increases automatically in need 
-	* Default = false
-	**/
-	autogrow_cols?: boolean;
-
-	/**
-	* A boolean to specify if the stylesheet should be generated or not
-	**/
-	autogenerate_stylesheet?: boolean;
-	
 	/**
 	* An object with all options for Resizable class you want to overwrite.  @see GridsterResizable or docs for more info.
 	**/
