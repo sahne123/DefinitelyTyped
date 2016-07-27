@@ -172,16 +172,22 @@ interface GridsterOptions {
 	* A string to differentiate one gridster from another
 	**/
 	namespace?: string;
+	
+	/**
+	* If true, the number of columns increases automatically in need 
+	* Default = false
+	**/
+	autogrow_cols?: boolean;
 
-    /**
-     * A boolean to specify if the stylesheet should be generated or not
-     **/
-    autogenerate_stylesheet?: boolean;
-
-    /**
-     * An object with all options for Resizable class you want to overwrite.  @see GridsterResizable or docs for more info.
-     **/
-    resize?: GridsterResizable;
+	/**
+	* A boolean to specify if the stylesheet should be generated or not
+	**/
+	autogenerate_stylesheet?: boolean;
+	
+	/**
+	* An object with all options for Resizable class you want to overwrite.  @see GridsterResizable or docs for more info.
+	**/
+	resize?: GridsterResizable;
 }
 
 interface JQuery {
